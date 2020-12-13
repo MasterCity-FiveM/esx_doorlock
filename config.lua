@@ -208,24 +208,104 @@ Config.DoorList = {
 	-- Bolingbroke Penitentiary
 	--
 
-	-- Entrance (Two big gates)
+	-- enter door
 	{
-		objHash = GetHashKey('prop_gate_prison_01'),
-		objCoords = vector3(1844.9, 2604.8, 44.6),
-		textCoords = vector3(1844.9, 2608.5, 48.0),
+		objHash = GetHashKey('prop_damdoor_01'),
+		objCoords = vector3(735.1982,132.4122 ,80.90654),
+		textCoords = vector3(735.1982,132.4122 ,81.4),
 		authorizedJobs = {'police'},
-		locked = true,
-		maxDistance = 12,
-		size = 2
+		locked = false,
+		maxDistance = 3,
+		size = 1
 	},
 
 	{
-		objHash = GetHashKey('prop_gate_prison_01'),
-		objCoords = vector3(1818.5, 2604.8, 44.6),
-		textCoords = vector3(1818.5, 2608.4, 48.0),
+		objHash = GetHashKey('patoche_grillage'),
+		objCoords = vector3(732.0582 ,133.4189 ,79.77741),
+		textCoords = vector3(732.0582 ,133.4189 ,81.5),
+		authorizedJobs = {'police'},
+		locked = false,
+		maxDistance = 3,
+		size = 1
+	},
+
+	{
+		objHash = GetHashKey('patoche_grillage'),
+		objCoords = vector3(721.4283 ,137.9185 ,79.77741),
+		textCoords = vector3(721.4283 ,137.9185 ,81.5),
 		authorizedJobs = {'police'},
 		locked = true,
-		maxDistance = 12,
-		size = 2
+		maxDistance = 3,
+		size = 1
+	},
+
+	{
+		objHash = GetHashKey('patoche_objet10'),
+		objCoords = vector3(727.6892,149.3619,79.71307),
+		textCoords = vector3(727.6892,149.3619,81.5),
+		authorizedJobs = {'police'},
+		locked = false,
+		maxDistance = 5,
+		size = 1
+	},
+
+	{
+		objHash = GetHashKey('patoche_objet10'),
+		objCoords = vector3(729.7232,148.1876,79.71307),
+		textCoords = vector3(729.7232,148.1876,81.5),
+		authorizedJobs = {'police'},
+		locked = false,
+		maxDistance = 5,
+		size = 1
+	},
+
+	{
+		objHash = GetHashKey('patoche_objet8'),
+		objCoords = vector3(737.2482,152.4365,80.82201),
+		textCoords = vector3(737.2482,152.4365,81.5),
+		authorizedJobs = {'police'},
+		locked = false,
+		maxDistance = 3,
+		size = 1
+	},
+
+	{
+		objHash = GetHashKey('patoche_objet8'),
+		objCoords = vector3(726.327,154.3026,80.82201),
+		textCoords = vector3(726.327,154.3026,81.5),
+		authorizedJobs = {'police'},
+		locked = false,
+		maxDistance = 3,
+		size = 1
+	},
+
+	{
+		objHash = GetHashKey('v_ilev_cor_doorglassa'),
+		objCoords = vector3(725.98,156.7303,80.90482),
+		textCoords = vector3(725.98,156.7303,81.5),
+		authorizedJobs = {'police'},
+		locked = false,
+		maxDistance = 3,
+		size = 1
+	},
+
+	{
+		objHash = GetHashKey('patoche_objet6'),
+		objCoords = vector3(718.879,158.1238,80.8658),
+		textCoords = vector3(718.879,158.1238,81.5),
+		authorizedJobs = {'police'},
+		locked = false,
+		maxDistance = 3,
+		size = 1
+	},
+
+	{
+		objHash = GetHashKey('ba_prop_door_club_glam_wc'),
+		objCoords = vector3(717.3004,161.4971,80.87119),
+		textCoords = vector3(717.3004,161.4971,81.5),
+		authorizedJobs = {'police'},
+		locked = false,
+		maxDistance = 3,
+		size = 1
 	}
 }
