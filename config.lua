@@ -64,6 +64,16 @@ Config.DoorList = {
 	},
 
 	-- Captain Office
+	--[[{
+		objHash = GetHashKey('prop_facgate_07'),
+		objHeading = 270.0,
+		objCoords = vector3(410.9178, -1025.014, 28.61517),
+		textCoords = vector3(410.9178, -1021, 30),
+		authorizedJobs = {'police'},
+		locked = true,
+		maxDistance = 10
+	},]]--
+
 	{
 		objHash = GetHashKey('v_ilev_ph_gendoor002'),
 		objHeading = 180.0,
