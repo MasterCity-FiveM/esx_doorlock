@@ -66,9 +66,21 @@ Citizen.CreateThread(function()
 	end
 end)
 
+RegisterNetEvent('master_keymap:e')
+AddEventHandler('master_keymap:e', function()
+	for k,v in ipairs(Config.DoorList) do
+		if v.distanceToPlayer and v.distanceToPlayer < v.maxDistance then
+			if v.isAuthorized then
+				v.locked = not v.locked
+				TriggerServerEvent('esx_doorlock:updateState', k, v.locked) -- broadcast new state of the door to everyone
+			end
+		end
+	end
+end)
+
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(0)
+		Citizen.Wait(1)
 		local letSleep = true
 
 		for k,v in ipairs(Config.DoorList) do
@@ -92,18 +104,11 @@ Citizen.CreateThread(function()
 				if v.isAuthorized then displayText = _U('press_button', displayText) end
 
 				ESX.Game.Utils.DrawText3D(v.textCoords, displayText, size)
-
-				if IsControlJustReleased(0, 38) then
-					if v.isAuthorized then
-						v.locked = not v.locked
-						TriggerServerEvent('esx_doorlock:updateState', k, v.locked) -- broadcast new state of the door to everyone
-					end
-				end
 			end
 		end
 
 		if letSleep then
-			Citizen.Wait(500)
+			Citizen.Wait(2000)
 		end
 	end
 end)
