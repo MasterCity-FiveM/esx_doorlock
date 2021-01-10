@@ -317,5 +317,16 @@ Config.DoorList = {
 		locked = false,
 		maxDistance = 3,
 		size = 1
+	},
+	
+	-- BANK ROBBERY
+	{
+		objHash = GetHashKey('hei_v_ilev_bk_gate2_pris'),
+		objCoords = vector3(261.49499291992,223.06776782227,106.28346405029),
+		textCoords = vector3(261.49499291992,223.06776782227,106.28346405029),
+		authorizedJobs = {'BankRobbery'},
+		locked = true,
+		maxDistance = 0,
+		size = 0
 	}
 }
