@@ -193,10 +193,73 @@ Config.DoorList = {
 		objHeading = 30.0,
 		objCoords = vector3(1855.1, 3683.5, 34.2),
 		textCoords = vector3(1855.1, 3683.5, 35.0),
-		authorizedJobs = {'police'},
+		authorizedJobs = {'sheriff'},
 		locked = false,
 		maxDistance = 1.25
 	},
+	-- Jelo Samt Rast
+	{
+		objHash = GetHashKey('v_ilev_rc_door2'),
+		objHeading = 30.0,
+		objCoords = vector3(1857.249, 3690.31, 34.417),
+		textCoords = vector3(1857.249, 3690.31, 34.417),
+		authorizedJobs = {'sheriff'},
+		locked = true,
+		maxDistance = 1.25
+	},
+	-- Samt Chap
+	{
+		textCoords = vector3(1850.505, 3682.906, 34.19995), 
+		authorizedJobs = {'sheriff'},
+		locked = true,
+		maxDistance = 1.5,
+		doors = {
+			{objHash = GetHashKey('v_ilev_rc_door2'), objHeading = 300.0, objCoords  = vector3(1849.948, 3684.099, 34.417)},
+			{objHash = GetHashKey('v_ilev_rc_door2'), objHeading = 119.0, objCoords  = vector3(1851.249, 3681.846, 34.417)}
+		}
+	},
+	-- Mostaghim
+	{
+		textCoords = vector3(1848.079, 3690.725, 34.19995), 
+		authorizedJobs = {'sheriff'},
+		locked = true,
+		maxDistance = 2,
+		doors = {
+			{objHash = GetHashKey('v_ilev_rc_door2'), objHeading = 30.0, objCoords  = vector3(1847.147, 3689.904, 34.417)},
+			{objHash = GetHashKey('v_ilev_rc_door2'), objHeading = 210.0, objCoords  = vector3(1849.4, 3691.204, 34.417)}
+		}
+	},
+	-- Zendan 1
+	{
+		objHash = GetHashKey('v_ilev_ph_cellgate'),
+		objHeading = 300.0,
+		objCoords = vector3(1847.829, 3682.075, 34.19995),
+		textCoords = vector3(1847.829, 3682.075, 34.19995),
+		authorizedJobs = {'sheriff'},
+		locked = true,
+		maxDistance = 1.25
+	},
+	-- Zendan 2
+	{
+		objHash = GetHashKey('v_ilev_ph_cellgate'),
+		objHeading = 300.0,
+		objCoords = vector3(1845.982, 3685.147, 34.19995),
+		textCoords = vector3(1845.982, 3685.147, 34.19995),
+		authorizedJobs = {'sheriff'},
+		locked = true,
+		maxDistance = 1.25
+	},
+	-- Zendan 3
+	{
+		objHash = GetHashKey('v_ilev_ph_cellgate'),
+		objHeading = 120.0,
+		objCoords = vector3(1844.505, 3687.758, 34.199955),
+		textCoords = vector3(1844.505, 3687.758, 34.199955),
+		authorizedJobs = {'sheriff'},
+		locked = true,
+		maxDistance = 1.25
+	},
+
 
 	--
 	-- Paleto Bay
