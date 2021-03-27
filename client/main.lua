@@ -1,4 +1,5 @@
 ESX = nil
+local closeObject = {}
 
 Citizen.CreateThread(function()
 	while ESX == nil do
@@ -29,7 +30,9 @@ AddEventHandler('esx_doorlock:setDoorState', function(index, state) Config.DoorL
 Citizen.CreateThread(function()
 	while true do
 		local playerCoords = GetEntityCoords(PlayerPedId())
-
+		closeObject.key = 0
+		closeObject.dist = 100
+		
 		for k,v in ipairs(Config.DoorList) do
 			v.isAuthorized = isAuthorized(v)
 
@@ -60,20 +63,28 @@ Citizen.CreateThread(function()
 					v.object = GetClosestObjectOfType(v.objCoords, 1.0, v.objHash, false, false, false)
 				end
 			end
+			
+			if v.distanceToPlayer and v.distanceToPlayer < closeObject.dist then
+				closeObject.key = k
+				closeObject.dist = v.distanceToPlayer
+			end
 		end
-
-		Citizen.Wait(500)
+		
+		if closeObject.dist > 50 then
+			Citizen.Wait(5000)
+		else
+			Citizen.Wait(500)
+		end
 	end
 end)
 
 RegisterNetEvent('master_keymap:e')
 AddEventHandler('master_keymap:e', function()
-	for k,v in ipairs(Config.DoorList) do
-		if v.distanceToPlayer and v.distanceToPlayer < v.maxDistance then
-			if v.isAuthorized then
-				v.locked = not v.locked
-				TriggerServerEvent('esx_doorlock:updateState', k, v.locked) -- broadcast new state of the door to everyone
-			end
+	if closeObject and closeObject.key ~= nil and closeObject.key ~= 0 and Config.DoorList[closeObject.key] and closeObject.dist < Config.DoorList[closeObject.key].maxDistance then
+		local v = Config.DoorList[closeObject.key]
+		if v.isAuthorized then
+			v.locked = not v.locked
+			TriggerServerEvent('esx_doorlock:updateState', k, v.locked) -- broadcast new state of the door to everyone
 		end
 	end
 end)
@@ -98,7 +109,7 @@ Citizen.CreateThread(function()
 
 			if v.distanceToPlayer and v.distanceToPlayer < v.maxDistance then
 				local size, displayText = 1, _U('unlocked')
-
+				letSleep = false
 				if v.size then size = v.size end
 				if v.locked then displayText = _U('locked') end
 				if v.isAuthorized then displayText = _U('press_button', displayText) end
@@ -108,7 +119,7 @@ Citizen.CreateThread(function()
 		end
 
 		if letSleep then
-			Citizen.Wait(2000)
+			Citizen.Wait(5000)
 		end
 	end
 end)
