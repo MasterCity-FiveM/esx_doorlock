@@ -5,6 +5,7 @@ TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
 RegisterServerEvent('esx_doorlock:updateState')
 AddEventHandler('esx_doorlock:updateState', function(doorIndex, state)
+	ESX.RunCustomFunction("anti_ddos", source, 'esx_doorlock:updateState', {doorIndex = doorIndex, state = state})
 	local xPlayer = ESX.GetPlayerFromId(source)
 
 	if xPlayer and type(doorIndex) == 'number' and type(state) == 'boolean' and Config.DoorList[doorIndex] and isAuthorized(xPlayer.job.name, Config.DoorList[doorIndex]) then
@@ -14,6 +15,7 @@ AddEventHandler('esx_doorlock:updateState', function(doorIndex, state)
 end)
 
 ESX.RegisterServerCallback('esx_doorlock:getDoorState', function(source, cb)
+	ESX.RunCustomFunction("anti_ddos", source, 'esx_doorlock:getDoorState', {})
 	cb(doorState)
 end)
 
