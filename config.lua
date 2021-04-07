@@ -391,5 +391,17 @@ Config.DoorList = {
 		locked = true,
 		maxDistance = 0,
 		size = 0
-	}
+	},
+	
+	-- MEDIC
+	{
+		textCoords = vector3(288.9758, -571.5033, 44.18091),
+		authorizedJobs = {'ambulance'},
+		locked = true,
+		maxDistance = 15,
+		doors = {
+			{objHash = GetHashKey('prop_lrggate_02_ld'), objHeading = 69.0, objCoords = vector3(287.1145, -577.3779, 42.45942)},
+			{objHash = GetHashKey('prop_lrggate_02_ld'), objHeading = 251.0, objCoords = vector3(291.3808, -565.8968, 42.4669)}
+		}
+	},
 }
