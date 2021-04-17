@@ -392,7 +392,7 @@ Config.DoorList = {
 		maxDistance = 0,
 		size = 0
 	},
-	
+	--[[
 	-- MEDIC
 	{
 		textCoords = vector3(288.9758, -571.5033, 44.18091),
@@ -404,4 +404,5 @@ Config.DoorList = {
 			{objHash = GetHashKey('prop_lrggate_02_ld'), objHeading = 251.0, objCoords = vector3(291.3808, -565.8968, 42.4669)}
 		}
 	},
+	]]--
 }
