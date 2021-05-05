@@ -84,7 +84,7 @@ AddEventHandler('master_keymap:e', function()
 		local v = Config.DoorList[closeObject.key]
 		if v.isAuthorized then
 			v.locked = not v.locked
-			TriggerServerEvent('esx_doorlock:updateState', k, v.locked) -- broadcast new state of the door to everyone
+			TriggerServerEvent('esx_doorlock:updateState', closeObject.key, v.locked) -- broadcast new state of the door to everyone
 		end
 	end
 end)
