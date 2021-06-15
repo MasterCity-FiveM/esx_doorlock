@@ -70,7 +70,9 @@ Citizen.CreateThread(function()
 			end
 		end
 		
-		if closeObject.dist > 50 then
+		if closeObject.dist > 100 then
+			Citizen.Wait(15000)
+		elseif closeObject.dist > 50 then
 			Citizen.Wait(5000)
 		else
 			Citizen.Wait(500)
